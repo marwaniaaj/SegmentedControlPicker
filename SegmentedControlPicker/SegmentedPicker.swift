@@ -41,9 +41,15 @@ struct SegmentedPicker<SelectionValue, Content>: View where SelectionValue: Hash
                     ForEach(items, id:\.self) { item in
                         let selected = selection == item
                         VStack {
-                            content(item).id(item)
-                                .pickerTextStyle(isSelected: selected, selectionColor: selectionColor)
-                                .animationEffect(isSelected: selected, id: "picker", in: pickerTransition)
+                            if selected {
+                                content(item).id(item)
+                                    .pickerTextStyle(isSelected: selected, selectionColor: selectionColor)
+                                    .animationEffect(isSelected: selected, id: "picker", in: pickerTransition)
+                            }
+                            else {
+                                content(item).id(item)
+                                    .pickerTextStyle(isSelected: selected, selectionColor: selectionColor)
+                            }
                         }
                         .onTapGesture {
                             withAnimation(.easeInOut(duration: 0.2)) {
