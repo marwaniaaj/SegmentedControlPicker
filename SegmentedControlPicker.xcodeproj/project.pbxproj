@@ -64,7 +64,6 @@
 				7A0EC7DE2B42E374007F173C /* AnimationEffect.swift */,
 				7A0EC7CE2B42C6AE007F173C /* Assets.xcassets */,
 				7A0EC7D02B42C6AE007F173C /* Preview Content */,
-				7A0EC7DE2B42E374007F173C /* AnimationEffect.swift */,
 			);
 			path = SegmentedControlPicker;
 			sourceTree = "<group>";
