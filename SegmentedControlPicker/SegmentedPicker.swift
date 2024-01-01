@@ -57,8 +57,8 @@ struct SegmentedPicker<SelectionValue, Content>: View where SelectionValue: Hash
                         }
                     }
                     .onAppear {
-                        if selection == nil {
-                            selection = items[0]
+                        if selection == nil, let first = items.first {
+                            selection = first
                         }
                     }
                 }
