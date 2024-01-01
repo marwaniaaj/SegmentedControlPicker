@@ -44,7 +44,7 @@ struct SegmentedPicker<SelectionValue, Content>: View where SelectionValue: Hash
                             if selected {
                                 content(item).id(item)
                                     .pickerTextStyle(isSelected: selected, selectionColor: selectionColor)
-                                    .matchedGeometryEffect(id: "picker", in: pickerTransition)
+                                    .animationEffect(isSelected: selected, id: "picker", in: pickerTransition)
                             }
                             else {
                                 content(item).id(item)
