@@ -43,21 +43,12 @@ struct SegmentedPicker<SelectionValue, Content>: View where SelectionValue: Hash
                         VStack {
                             if selected {
                                 content(item).id(item)
-                                    .foregroundStyle(.white)
-                                    .padding(.horizontal)
-                                    .padding(.vertical, 8)
-                                    .lineLimit(1)
-                                    .background(selectionColor)
-                                    .clipShape(Capsule())
+                                    .pickerTextStyle(isSelected: selected, selectionColor: selectionColor)
                                     .matchedGeometryEffect(id: "picker", in: pickerTransition)
                             }
                             else {
                                 content(item).id(item)
-                                    .foregroundStyle(.black)
-                                    .padding(.horizontal)
-                                    .padding(.vertical, 8)
-                                    .lineLimit(1)
-                                    .clipShape(Capsule())
+                                    .pickerTextStyle(isSelected: selected, selectionColor: selectionColor)
                             }
                         }
                         .onTapGesture {
