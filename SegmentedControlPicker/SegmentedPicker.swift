@@ -22,14 +22,12 @@ struct SegmentedPicker<SelectionValue, Content>: View where SelectionValue: Hash
     init(
         selection: Binding<SelectionValue?>,
         items: Binding<[SelectionValue]>,
-        selectionColor: Color? = nil,
+        selectionColor: Color = .blue,
         @ViewBuilder content: @escaping (SelectionValue) -> Content
     ) {
         _selection = selection
         _items = items
-        if let selectionColor {
-            self.selectionColor = selectionColor
-        }
+        self.selectionColor = selectionColor
         self.content = content
     }
 
