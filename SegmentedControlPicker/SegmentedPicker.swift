@@ -31,6 +31,18 @@ struct SegmentedPicker<SelectionValue, Content>: View where SelectionValue: Hash
         self.content = content
     }
 
+    init(
+        selection: Binding<SelectionValue>,
+        items: Binding<[SelectionValue]>,
+        selectionColor: Color = .blue,
+        @ViewBuilder content: @escaping (SelectionValue) -> Content
+    ) {
+        _selection = Binding<SelectionValue?>(selection)
+        _items = items
+        self.selectionColor = selectionColor
+        self.content = content
+    }
+
     var body: some View {
         ScrollViewReader { proxy in
             ScrollView(.horizontal, showsIndicators: false) {
