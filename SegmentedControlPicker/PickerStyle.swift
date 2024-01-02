@@ -17,7 +17,6 @@ struct PickerStyle: ViewModifier {
             .padding(.horizontal)
             .padding(.vertical, 8)
             .lineLimit(1)
-            .background(isSelected ? selectionColor : nil)
             .clipShape(Capsule())
     }
 }
