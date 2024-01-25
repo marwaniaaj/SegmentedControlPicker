@@ -22,7 +22,6 @@ struct ContentView: View {
     ]
     @State var selectedBook: Book?
 
-
     var body: some View {
         VStack {
             SegmentedPicker(
@@ -30,7 +29,7 @@ struct ContentView: View {
                 items: $books,
                 selectionColor: .cyan
             ) { book in
-                Text(book.title )
+                Text(book.title)
             }
 
             if let selectedBook {

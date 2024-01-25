@@ -9,7 +9,6 @@ import SwiftUI
 
 struct PickerStyle: ViewModifier {
     var isSelected = true
-    var selectionColor: Color = .blue
 
     func body(content: Content) -> some View {
         content
@@ -22,7 +21,7 @@ struct PickerStyle: ViewModifier {
 }
 
 extension View {
-    func pickerTextStyle(isSelected: Bool, selectionColor: Color = .blue) -> some View {
-        modifier(PickerStyle(isSelected: isSelected, selectionColor: selectionColor))
+    func pickerTextStyle(isSelected: Bool) -> some View {
+        modifier(PickerStyle(isSelected: isSelected))
     }
 }

@@ -56,7 +56,7 @@ struct SegmentedPicker<SelectionValue, Content>: View where SelectionValue: Hash
                                 .animationEffect(isSelected: selected, id: "picker", in: pickerTransition)
 
                             content(item).id(item)
-                                .pickerTextStyle(isSelected: selected, selectionColor: selectionColor)
+                                .pickerTextStyle(isSelected: selected)
                         }
                         .onTapGesture {
                             withAnimation(.easeInOut(duration: 0.2)) {
